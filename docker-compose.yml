@@ -1,0 +1,23 @@
+services:
+  dxf-viewer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dxf-terrain-viewer
+    restart: unless-stopped
+    ports:
+      - "${DXF_VIEWER_BIND:-0.0.0.0}:${DXF_VIEWER_PORT:-8188}:8080"
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+      - /var/cache/nginx:size=16m,mode=0755
+      - /var/run:size=1m,mode=0755
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.50
+    labels:
+      com.trli.application: dxf-terrain-viewer
+      com.trli.description: Visor topografico DXF 2D y 3D
