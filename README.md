@@ -11,6 +11,8 @@ Incluye identidad visual de Transmission Line, favicon oficial y una interfaz ad
 
 La superficie 3D se interpola a partir de las cotas de los vértices. El control de exageración vertical permite destacar relieves suaves.
 
+En móvil puede acercar o alejar con dos dedos, desplazar el plano con uno y usar los botones `−`, `Extensión` y `+`. El visor conserva de forma independiente la vista 2D y la vista 3D al alternar entre ellas.
+
 Incluye los planos Panul y Navidad en formato DXF 2018 / AC1032. El visor detecta y muestra automáticamente la versión de cada archivo cargado.
 
 Los ejemplos están incorporados en la página para que funcionen también al abrir el HTML directamente, sin servidor ni conexión a internet.
