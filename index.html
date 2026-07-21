@@ -7,8 +7,8 @@
   <title>Terreno DXF · Visor 2D / 3D</title>
   <link rel="icon" type="image/png" href="assets/branding/favicon.png">
   <link rel="apple-touch-icon" href="assets/branding/favicon.png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles-extra.css">
+  <link rel="stylesheet" href="styles.css?v=20260721-2">
+  <link rel="stylesheet" href="styles-extra.css?v=20260721-2">
 </head>
 <body>
   <div class="app-shell">
@@ -61,8 +61,6 @@
       <footer>WGS 84 · UTM 19S <span id="coordinates">—</span></footer>
     </aside>
 
-    <button id="sidebarBackdrop" class="sidebar-backdrop" aria-label="Cerrar panel" tabindex="-1"></button>
-
     <main class="workspace" id="dropZone">
       <div class="topbar">
         <button id="menuButton" class="menu-button" aria-label="Abrir panel" aria-expanded="false">☰</button>
@@ -96,8 +94,9 @@
       </div>
     </main>
   </div>
+  <button id="sidebarBackdrop" class="sidebar-backdrop" aria-label="Cerrar panel" tabindex="-1" hidden></button>
   <div id="toast" class="toast" role="status"></div>
-  <script src="demo-data.js"></script>
-  <script src="app.js"></script>
+  <script src="demo-data.js?v=20260721-2"></script>
+  <script src="app.js?v=20260721-2"></script>
 </body>
 </html>
