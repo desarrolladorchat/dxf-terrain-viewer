@@ -1,0 +1,10 @@
+.git
+.gitignore
+.github
+node_modules
+*.log
+*.pid
+README.md
+iniciar.bat
+server.js
+work
