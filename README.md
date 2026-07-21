@@ -2,6 +2,8 @@
 
 Visor local 2D/3D para archivos DXF ASCII. No requiere instalar paquetes ni conexión a internet.
 
+Incluye identidad visual de Transmission Line, favicon oficial y una interfaz adaptable para escritorio, tablet y móvil con controles táctiles.
+
 ## Uso
 
 1. Ejecute `iniciar.bat` (requiere Node.js) para abrir el ejemplo incluido automáticamente.

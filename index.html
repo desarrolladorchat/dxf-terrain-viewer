@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0b1715">
   <title>Terreno DXF · Visor 2D / 3D</title>
+  <link rel="icon" type="image/png" href="assets/branding/favicon.png">
+  <link rel="apple-touch-icon" href="assets/branding/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="styles-extra.css">
 </head>
@@ -12,8 +14,11 @@
   <div class="app-shell">
     <aside class="sidebar">
       <header class="brand">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span><strong>Terreno</strong><small>DXF VIEWER</small></span>
+        <a class="brand-link" href="https://transmissionline.cl/" target="_blank" rel="noopener" aria-label="Transmission Line">
+          <img src="assets/branding/transmissionline-logo.png" alt="Transmission Line">
+          <span><strong>Visor topográfico</strong><small>DXF · 2D / 3D</small></span>
+        </a>
+        <button id="closeSidebar" class="sidebar-close" aria-label="Cerrar panel">×</button>
       </header>
 
       <section class="load-card">
@@ -56,8 +61,11 @@
       <footer>WGS 84 · UTM 19S <span id="coordinates">—</span></footer>
     </aside>
 
+    <button id="sidebarBackdrop" class="sidebar-backdrop" aria-label="Cerrar panel" tabindex="-1"></button>
+
     <main class="workspace" id="dropZone">
       <div class="topbar">
+        <button id="menuButton" class="menu-button" aria-label="Abrir panel" aria-expanded="false">☰</button>
         <div class="view-switch" role="tablist">
           <button class="active" data-view="2d">Plano 2D</button>
           <button data-view="3d">Terreno 3D</button>
