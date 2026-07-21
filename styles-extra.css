@@ -1,0 +1,31 @@
+.demo-row {
+  display: grid;
+  grid-template-columns: 1fr 72px;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.demo-row select {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--green);
+  font: 600 11px/1 system-ui;
+  padding: 0 9px;
+  outline: none;
+}
+
+.demo-row .ghost {
+  margin: 0;
+  padding-inline: 8px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.viewport > canvas {
+  position: absolute;
+  inset: 0;
+}

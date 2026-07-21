@@ -1,0 +1,10 @@
+# Archivos locales y temporales
+node_modules/
+*.log
+*.pid
+.DS_Store
+Thumbs.db
+
+# Configuración de editores
+.vscode/
+.idea/

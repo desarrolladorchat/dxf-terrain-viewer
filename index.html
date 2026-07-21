@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1715">
+  <title>Terreno DXF · Visor 2D / 3D</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-extra.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <header class="brand">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>Terreno</strong><small>DXF VIEWER</small></span>
+      </header>
+
+      <section class="load-card">
+        <input id="fileInput" type="file" accept=".dxf" multiple hidden>
+        <button class="primary" id="openButton"><span>＋</span> Abrir archivos DXF</button>
+        <div class="demo-row">
+          <select id="demoSelect" aria-label="Plano de ejemplo">
+            <option value="panul">Panul · DXF 2018</option>
+            <option value="navidad">Navidad · DXF 2018</option>
+          </select>
+          <button class="ghost" id="demoButton">Cargar</button>
+        </div>
+        <p>También puede arrastrarlos sobre el plano.</p>
+      </section>
+
+      <section id="modelInfo" class="panel model-info is-empty">
+        <div class="section-title">MODELO <span id="fileCount">0 archivos</span></div>
+        <p id="emptyMessage">Cargue uno o varios DXF para comenzar.</p>
+        <div id="stats" class="stats" hidden>
+          <div><span>Entidades</span><strong id="entityCount">—</strong></div>
+          <div><span>Vértices</span><strong id="vertexCount">—</strong></div>
+          <div><span>Área</span><strong id="areaSize">—</strong></div>
+          <div><span>Cotas</span><strong id="elevationRange">—</strong></div>
+          <div><span>Formato</span><strong id="formatVersion">—</strong></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">CAPAS <button id="toggleLayers" class="text-button">Ocultar</button></div>
+        <div id="layers" class="layers"><p class="muted">Sin capas cargadas</p></div>
+      </section>
+
+      <section id="terrainControls" class="panel terrain-controls">
+        <div class="section-title">RELIEVE 3D</div>
+        <label class="switch-row">Superficie interpolada <input id="surfaceToggle" type="checkbox" checked><i></i></label>
+        <label class="range-row"><span>Exageración vertical <b id="exaggerationValue">2.0×</b></span><input id="exaggeration" type="range" min="0.2" max="8" value="2" step="0.1"></label>
+        <label class="range-row"><span>Opacidad superficie <b id="opacityValue">76%</b></span><input id="surfaceOpacity" type="range" min="0" max="1" value="0.76" step="0.01"></label>
+      </section>
+
+      <footer>WGS 84 · UTM 19S <span id="coordinates">—</span></footer>
+    </aside>
+
+    <main class="workspace" id="dropZone">
+      <div class="topbar">
+        <div class="view-switch" role="tablist">
+          <button class="active" data-view="2d">Plano 2D</button>
+          <button data-view="3d">Terreno 3D</button>
+        </div>
+        <div class="tools">
+          <button id="fitButton" title="Ajustar a pantalla">⌗ <span>Ajustar</span></button>
+          <button id="gridButton" class="active" title="Mostrar cuadrícula">▦ <span>Grilla</span></button>
+          <button id="shotButton" title="Descargar imagen">⇩ <span>Captura</span></button>
+          <button id="fullscreenButton" title="Pantalla completa">⛶</button>
+        </div>
+      </div>
+
+      <div class="viewport">
+        <canvas id="canvas2d"></canvas>
+        <canvas id="canvas3d" hidden></canvas>
+        <div class="orientation" id="orientation" hidden><span>Z</span><i class="z"></i><span class="x-label">X</span><i class="x"></i><span class="y-label">Y</span><i class="y"></i></div>
+        <div id="welcome" class="welcome">
+          <div class="contours" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <small>VISOR TOPOGRÁFICO</small>
+          <h1>Explore sus planos<br>en dos y tres dimensiones.</h1>
+          <p>Abra archivos DXF con curvas de nivel y recorra el terreno de forma interactiva.</p>
+          <button id="welcomeOpen" class="primary">Seleccionar DXF</button>
+          <span>o arrastre los archivos aquí</span>
+        </div>
+        <div id="dropHint" class="drop-hint">Suelte los archivos DXF para abrirlos</div>
+        <div class="legend" id="legend" hidden><span>155 m</span><i></i><span>181 m</span></div>
+        <div class="help" id="help">Rueda: zoom · Arrastrar: desplazar</div>
+      </div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="demo-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
