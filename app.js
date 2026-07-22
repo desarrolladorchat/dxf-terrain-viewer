@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const c2=$('#canvas2d'),c3=$('#canvas3d'),x2=c2.getContext('2d'),x3=c3.getContext('2d');
-const state={models:[],polys:[],layers:new Map(),bounds:null,view:'2d',grid:true,allLayers:true,surface:null,surfaceOn:true,opacity:.76,exag:2,
+const state={models:[],polys:[],layers:new Map(),bounds:null,view:'2d',grid:true,allLayers:true,surface:null,surfaceOn:true,opacity:.5,exag:2,
   v2:{scale:1,ox:0,oy:0},v3:{yaw:-.7,pitch:.78,zoom:1,ox:0,oy:0},fitted:{'2d':false,'3d':false},drag:null,pinch:null,pointers:new Map()};
 const colors=['#c8783f','#1d7565','#517db0','#b85857','#8a6ab2','#77964e','#a56f33','#337b92'];
 
